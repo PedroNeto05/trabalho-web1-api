@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { ICreatePostUseCase } from '../../../useCase/postsUseCase/ICreatePostUseCase';
+import { ICreatePostUseCase } from '../../../useCase/postsUseCase/CreatePostUseCase/ICreatePostUseCase';
 
 export class CreatePostController {
   constructor(private readonly createPostUseCase: ICreatePostUseCase) {}
