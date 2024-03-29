@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only --notify --ignore-watch node_modules ./src/server.ts",
     "build": "tsc",
+    "build:watch": "tsc -w",
     "start": "node ./dist/server.js"
   },
   "keywords": [],
