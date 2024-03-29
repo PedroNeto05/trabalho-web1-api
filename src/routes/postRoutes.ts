@@ -1,5 +1,25 @@
 import { Router } from 'express';
+import {
+  createPostController,
+  deletePostController,
+  getAllPostsController,
+  updatePostController,
+} from '..';
 
 export const postRoutes = Router();
 
-postRoutes.post('/');
+postRoutes.post('/', (req, res) => {
+  createPostController.handle(req, res);
+});
+
+postRoutes.get('/', (req, res) => {
+  getAllPostsController.handle(req, res);
+});
+
+postRoutes.put('/', (req, res) => {
+  updatePostController.handle(req, res);
+});
+
+postRoutes.delete('/', (req, res) => {
+  deletePostController.handle(req, res);
+});
