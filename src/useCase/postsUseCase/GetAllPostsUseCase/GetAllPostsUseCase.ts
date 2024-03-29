@@ -2,7 +2,7 @@ import { Post } from '../../../entities/Post';
 import { IGetAllPostsRepository } from '../../../repositories/postsRepository/GetAllPostsRepository/IGetAllPostsRepository';
 import { IGetAllPostsUseCase } from './IGetAllPostsUseCase';
 
-export class GetPostsUseCase implements IGetAllPostsUseCase {
+export class GetAllPostsUseCase implements IGetAllPostsUseCase {
   constructor(private readonly getPostsRepository: IGetAllPostsRepository) {}
 
   async execute(): Promise<Post[]> {
