@@ -10,6 +10,8 @@
       "./node_modules/@types",
       "./src/@types"
     ],
+    "rootDir": "./src",
+    "outDir": "./dist",
     // "paths": {}, enhanced import paths
     "resolveJsonModule": true,
     "allowJs": true,
