@@ -2,7 +2,7 @@ import { Post } from '../../../entities/Post';
 import { ICreatePostParams } from '../../../useCase/postsUseCase/CreatePostUseCase/ICreatePostUseCase';
 import { ICreatePostRepository } from './ICreatePostRepository';
 
-export class CreatePostRepository implements ICreatePostRepository {
+export class InMemoryCreatePostRepository implements ICreatePostRepository {
   constructor(private readonly inMemoryDataBase: Post[]) {}
 
   save({ body, title }: ICreatePostParams): Post {
