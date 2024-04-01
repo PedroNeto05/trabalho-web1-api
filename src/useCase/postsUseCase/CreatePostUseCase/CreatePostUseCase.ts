@@ -5,11 +5,11 @@ import { ICreatePostParams, ICreatePostUseCase } from './ICreatePostUseCase';
 export class CreatePostUseCase implements ICreatePostUseCase {
   constructor(
     private readonly createPostRepository: ICreatePostRepository,
-    private readonly getPostById: IGetPostByTitleRepository,
+    private readonly getPostByTitle: IGetPostByTitleRepository,
   ) {}
 
   async execute({ body, title }: ICreatePostParams): Promise<void> {
-    const postExists = await this.getPostById.findByTitle(title);
+    const postExists = await this.getPostByTitle.findByTitle(title);
 
     if (postExists) {
       throw new Error('Post already exists');
