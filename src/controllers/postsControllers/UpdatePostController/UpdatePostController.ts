@@ -6,6 +6,7 @@ export class UpdatePostController {
 
   async handle(req: Request, res: Response) {
     const { title, body } = req.body;
+    const { id } = req.params;
 
     if (!title || !body) {
       return res.status(400).json({
@@ -13,8 +14,14 @@ export class UpdatePostController {
       });
     }
 
+    if (!id) {
+      return res.status(400).json({
+        message: 'Id required',
+      });
+    }
+
     try {
-      await this.updatePostUseCase.execute({ title, body });
+      await this.updatePostUseCase.execute({ title, body, id });
       return res.status(200);
     } catch (error) {
       const err = error as Error;

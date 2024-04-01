@@ -1,4 +1,5 @@
 export interface IUpdatePostParams {
+  id: string;
   title: string;
   body: string;
 }
