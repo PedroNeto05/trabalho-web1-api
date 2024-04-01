@@ -8,7 +8,7 @@ export class UpdatePostController {
     const { title, body } = req.body;
     const { id } = req.params;
 
-    if (!title || !body) {
+    if (!title && !body) {
       return res.status(400).json({
         message: 'All fields required',
       });
@@ -22,7 +22,7 @@ export class UpdatePostController {
 
     try {
       await this.updatePostUseCase.execute({ title, body, id });
-      return res.status(200);
+      return res.status(200).json();
     } catch (error) {
       const err = error as Error;
 

@@ -16,10 +16,10 @@ postRoutes.get('/', (req, res) => {
   getAllPostsController.handle(req, res);
 });
 
-postRoutes.put('/', (req, res) => {
+postRoutes.put('/:id', (req, res) => {
   updatePostController.handle(req, res);
 });
 
-postRoutes.delete('/', (req, res) => {
+postRoutes.delete('/:id', (req, res) => {
   deletePostController.handle(req, res);
 });

@@ -11,8 +11,8 @@ export class UpdatePostUseCase implements IUpdatePostUseCase {
   async execute({ title, body, id }: IUpdatePostParams): Promise<void> {
     const postExists = await this.getPostByIdRepository.getById(id);
 
-    if (postExists) {
-      throw new Error('Post already exists');
+    if (!postExists) {
+      throw new Error('Post does not exists');
     }
 
     await this.updatePostRepository.updatePost({ title, body, id });

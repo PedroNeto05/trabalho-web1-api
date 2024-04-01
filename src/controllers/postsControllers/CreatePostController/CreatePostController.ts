@@ -15,7 +15,7 @@ export class CreatePostController {
 
     try {
       await this.createPostUseCase.execute({ title, body });
-      return res.status(200);
+      return res.status(200).json();
     } catch (error) {
       const err = error as Error;
 

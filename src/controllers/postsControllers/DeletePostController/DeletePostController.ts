@@ -15,7 +15,7 @@ export class DeletePostController {
 
     try {
       await this.deletePostUseCase.execute(id);
-      return res.status(200);
+      return res.status(200).json();
     } catch (error) {
       const err = error as Error;
 
