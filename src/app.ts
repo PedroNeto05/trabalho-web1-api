@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
 import { postRoutes } from './routes/postRoutes';
 
-export class App {
+class App {
   public app: Application;
 
   constructor() {
@@ -19,3 +19,5 @@ export class App {
     this.app.use('/posts', postRoutes);
   }
 }
+
+export default new App().app;
