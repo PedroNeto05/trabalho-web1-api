@@ -3,5 +3,5 @@ import { ICreatePostParams } from '../../../useCase/postsUseCase/CreatePostUseCa
 
 export interface ICreatePostRepository {
   save(createPostParams: ICreatePostParams): Post;
-  create(createPostParams: ICreatePostParams): Promise<Post>;
+  create(post: Post): Promise<null>;
 }
