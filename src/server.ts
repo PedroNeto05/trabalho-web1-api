@@ -1,4 +1,3 @@
-import cors from 'cors';
 import app from './app';
 
 const PORT = 3333;
